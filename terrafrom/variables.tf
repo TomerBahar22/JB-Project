@@ -10,5 +10,5 @@ variable "ami_id" {
 }
 
 variable "instance_type" {
-  default = "t3.micro" # need t3.Medium for Docker Support but not free tier
+  default = "t3.micro" 
 }

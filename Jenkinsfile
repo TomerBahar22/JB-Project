@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Clone Repository') {
       steps {
-        git branch: 'K8S', url: 'https://github.com/TomerBahar22/Project.git'
+        url: 'https://github.com/TomerBahar22/JB-Project.git'
       }
     }
 
