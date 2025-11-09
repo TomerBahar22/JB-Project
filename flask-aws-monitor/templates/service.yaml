@@ -1,7 +1,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: {{ .Release.Name-svc }}
+  name: {{ .Release.Name }}-svc
 spec:
   selector:
     app: {{ .Values.labels.app }}
