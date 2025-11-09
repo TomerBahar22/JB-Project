@@ -21,7 +21,7 @@ Provisions an **EC2 instance** and generates an **SSH key pair** automatically.
 ### Setup
 ```bash
 git clone https://github.com/TomerBahar22/JB-Project.git
-cd ProjectV1/Terraform/
+cd JB-Project/Terraform/
 export AWS_ACCESS_KEY_ID="YOUR_ACCESS_KEY"
 export AWS_SECRET_ACCESS_KEY="YOUR_SECRET_KEY"
 export AWS_REGION=us-east-1
@@ -67,7 +67,7 @@ Runs a **Flask + boto3** web app inside Docker on your EC2 instance.
 ### Deploy the App
 ```bash
 git clone https://github.com/TomerBahar22/JB-Project.git #if you havent already 
-cd ProjectV1/
+cd JB-Project/
 sudo docker build -t python-web:latest .
 sudo docker run -d -p 5001:5001   -e AWS_ACCESS_KEY_ID=<your_access_key>   -e AWS_SECRET_ACCESS_KEY=<your_secret_key>   -e AWS_DEFAULT_REGION=us-east-1   python-web:latest
 ```
@@ -130,7 +130,7 @@ Deploys the Dockerized app to **Kubernetes** via Helm chart.
 ### Deploy
 ```bash
 git clone https://github.com/TomerBahar22/JB-Project.git #if you havent already 
-cd ProjectV1/charts/flask-aws-monitor
+cd JB-Project/charts/flask-aws-monitor
 
 helm install flask-aws-monitor ./flask-aws-monitor
 kubectl get pods
