@@ -1,0 +1,18 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: {{ .Release.Name }}
+spec:
+  selector:
+    app: {{ .Values.labels.app }}
+  {{- if .Values.ingress.enabled }}
+    type: ClusterIP        
+  {{- else }}
+    type: LoadBalancer      
+  {{- end }}
+
+  ports:
+  - name: {{ .Values.ports.name }}
+    protocol: {{ .Values.ports.protocol }}
+    port: {{ .Values.ports.port }}
+    targetPort: {{ .Values.ports.targetPort }}

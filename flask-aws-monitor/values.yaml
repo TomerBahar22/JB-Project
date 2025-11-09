@@ -1,0 +1,35 @@
+ports: 
+  name: http
+  protocol: TCP
+  port: 80
+  targetPort: 5001
+
+replicas: 1
+
+containers:
+  name: "monitor-aws"
+  image: "tomerbahar2/python-web:latest"
+  ports:
+    containerPort: 5001
+
+labels:
+  app: monitor
+
+imagePullPolicy: Always
+
+ingress:
+  enabled: true
+  className: nginx
+  annotations: { nginx.ingress.kubernetes.io/rewrite-target: / }
+  hosts:
+    - host: ""
+      paths:
+        - path: /
+          pathType: Prefix
+  tls: []
+
+  aws:
+    env:
+      AWS_ACCESS_KEY_ID: ""
+      AWS_SECRET_ACCESS_KEY: ""
+      AWS_DEFAULT_REGION: ""
